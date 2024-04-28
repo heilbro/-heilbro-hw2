@@ -22,13 +22,17 @@
 # There are three deliverables for this assignment, all delivered within
 # this repository and submitted via GitHub and Canvas:
 # - Generate the models and migration files to match the domain model from hw1.
+#done
+
 
 #   Table and columns should match the domain model. Execute the migration
 #   files to create the tables in the database. (5 points)
+#done
 
 # - Insert the "Batman" sample data using ruby code. Do not use hard-coded ids.
 #   Delete any existing data beforehand so that each run of this script does not
 #   create duplicate data. (5 points)
+
 
 # - Query the data and loop through the results to display output similar to the
 #   sample "report" below. (10 points)
@@ -71,11 +75,45 @@
 # The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 # Delete existing data, so you'll start fresh each time this script is run.
-# Use `Model.destroy_all` code.
-# TODO!
+
+Studio.destroy_all
+Movie.destroy_all 
+Actor.destroy_all
+Role.destroy_all
+
 
 # Generate models and tables, according to the domain model.
-# TODO!
+
+studio = Studio.new
+studio["name"] = "Warner Bros"
+studio.save
+puts "studio: #{Studio.all.inspect}"
+
+
+movie = Movie.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = 2005
+movie["rated"] ="PG-13"
+movie["studio_id"] = studio["id"]
+movie.save
+
+
+movie = Movie.new
+movie["title"] = "The Dark Knight"
+movie["year_released"] = 2008
+movie["rated"] ="PG-13"
+movie["studio_id"] = studio["id"]
+movie.save
+
+movie = Movie.new
+movie["title"] = "The Dark Knight Rises"
+movie["year_released"] = 2012
+movie["rated"] ="PG-13"
+movie["studio_id"] = studio["id"]
+movie.save
+puts "movie: #{Movie.all.inspect}"
+
+
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
