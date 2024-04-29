@@ -83,6 +83,7 @@ Role.destroy_all
 
 
 # Generate models and tables, according to the domain model.
+ #each one has a unique name for refferencing
 
 studio = Studio.new
 studio["name"] = "Warner Bros"
@@ -90,34 +91,78 @@ studio.save
 puts "studio: #{Studio.all.inspect}"
 
 
-movie = Movie.new
-movie["title"] = "Batman Begins"
-movie["year_released"] = 2005
-movie["rated"] ="PG-13"
-movie["studio_id"] = studio["id"]
-movie.save
+first = Movie.new
+first["title"] = "Batman Begins"
+first["year_released"] = 2005
+first["rated"] ="PG-13"
+first["studio_id"] = studio["id"]
+first.save
 
+second = Movie.new
+second["title"] = "The Dark Knight"
+second["year_released"] = 2008
+second["rated"] ="PG-13"
+second["studio_id"] = studio["id"]
+second.save
 
-movie = Movie.new
-movie["title"] = "The Dark Knight"
-movie["year_released"] = 2008
-movie["rated"] ="PG-13"
-movie["studio_id"] = studio["id"]
-movie.save
-
-movie = Movie.new
-movie["title"] = "The Dark Knight Rises"
-movie["year_released"] = 2012
-movie["rated"] ="PG-13"
-movie["studio_id"] = studio["id"]
-movie.save
+last = Movie.new
+last["title"] = "The Dark Knight Rises"
+last["year_released"] = 2012
+last["rated"] ="PG-13"
+last["studio_id"] = studio["id"]
+last.save
 puts "movie: #{Movie.all.inspect}"
-
-
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
-# TODO!
+christian_bale = Actor.new
+christian_bale ["name"] = "Christian Bale"
+christian_bale.save
+
+michael_caine = Actor.new
+michael_caine ["name"] = "Michael Cine"
+michael_caine.save
+
+liam_neeson = Actor.new
+liam_neeson ["name"] = "Liam Neeson"
+liam_neeson.save
+
+
+katie_holmes = Actor.new
+katie_holmes ["name"] = "Katie Holmesn"
+katie_holmes.save
+
+gary_oldman = Actor.new
+gary_oldman ["name"] = "Gary Oldman"
+gary_oldman.save
+
+heath_ledger = Actor.new
+heath_ledger ["name"] = "Heath Ledger"
+heath_ledger.save
+
+aron_ackhart = Actor.new
+aron_ackhart ["name"] = "Aaron Eckhart"
+aron_ackhart.save
+
+maggie_gyllenhall = Actor.new
+maggie_gyllenhall ["name"] = "Maggie Gyllenhall"
+maggie_gyllenhall.save
+
+
+tom_hardy = Actor.new
+tom_hardy ["name"] = "Tom Hardy"
+tom_hardy.save
+
+joseph_gordon_levitt = Actor.new
+joseph_gordon_levitt ["name"] = "Joseph Gordon-Levitt"
+joseph_gordon_levitt.save
+
+anne_hathaway = Actor.new
+anne_hathaway ["name"] = "Anne Hathaway"
+anne_hathaway.save
+
+
+puts "actor: #{Actor.all.inspect} "
 
 # Prints a header for the movies output
 puts "Movies"
