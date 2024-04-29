@@ -88,7 +88,7 @@ Role.destroy_all
 studio = Studio.new
 studio["name"] = "Warner Bros"
 studio.save
-puts "studio: #{Studio.all.inspect}"
+#puts "studio: #{Studio.all.inspect}"
 
 
 first = Movie.new
@@ -111,7 +111,7 @@ last["year_released"] = 2012
 last["rated"] ="PG-13"
 last["studio_id"] = studio["id"]
 last.save
-puts "movie: #{Movie.all.inspect}"
+#puts "movie: #{Movie.all.inspect}"
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
@@ -120,7 +120,7 @@ christian_bale ["name"] = "Christian Bale"
 christian_bale.save
 
 michael_caine = Actor.new
-michael_caine ["name"] = "Michael Cine"
+michael_caine ["name"] = "Michael Caine"
 michael_caine.save
 
 liam_neeson = Actor.new
@@ -162,7 +162,102 @@ anne_hathaway ["name"] = "Anne Hathaway"
 anne_hathaway.save
 
 
-puts "actor: #{Actor.all.inspect} "
+#puts "actor: #{Actor.all.inspect} "
+
+bruce = Role.new
+bruce ["movie_id"] = first ["id"]
+bruce ["actor_id"] = christian_bale ["id"]
+bruce ["character_name"] = "Bruce Wayne"
+bruce.save
+
+alf = Role.new
+alf ["movie_id"] = first ["id"]
+alf ["actor_id"] = michael_caine ["id"]
+alf ["character_name"] = "Alfred"
+alf.save
+
+ra = Role.new
+ra ["movie_id"] = first ["id"]
+ra ["actor_id"] = liam_neeson ["id"]
+ra ["character_name"] = "Ra's Al Ghul"
+ra.save
+
+rachel = Role.new
+rachel ["movie_id"] = first ["id"]
+rachel ["actor_id"] = katie_holmes ["id"]
+rachel ["character_name"] = "Rachel Dawes"
+rachel.save
+
+
+com = Role.new
+com ["movie_id"] = first ["id"]
+com ["actor_id"] = gary_oldman ["id"]
+com ["character_name"] = "Commissioner Gordon"
+com.save
+
+
+bat2 = Role.new
+bat2 ["movie_id"] = second ["id"]
+bat2 ["actor_id"] = christian_bale ["id"]
+bat2 ["character_name"] = "Bruce Wayne"
+bat2.save
+
+joke = Role.new
+joke ["movie_id"] = second ["id"]
+joke ["actor_id"] = heath_ledger ["id"]
+joke ["character_name"] = "Joker"
+joke.save
+
+
+dent = Role.new
+dent ["movie_id"] = second ["id"]
+dent ["actor_id"] = aron_ackhart ["id"]
+dent ["character_name"] = "Harvey Dent"
+dent.save
+
+
+alf2 = Role.new
+alf2 ["movie_id"] = second ["id"]
+alf2 ["actor_id"] = michael_caine ["id"]
+alf2 ["character_name"] = "Alfred"
+alf2.save
+
+rach2 = Role.new
+rach2 ["movie_id"] = second ["id"]
+rach2 ["actor_id"] = maggie_gyllenhall ["id"]
+rach2 ["character_name"] = "Rachel Dawes"
+rach2.save
+
+bat3 = Role.new
+bat3 ["movie_id"] = last ["id"]
+bat3 ["actor_id"] = christian_bale ["id"]
+bat3 ["character_name"] = "Bruce Wayne"
+bat3.save
+
+com3 = Role.new
+com3 ["movie_id"] = last ["id"]
+com3 ["actor_id"] = gary_oldman ["id"]
+com3 ["character_name"] = "Commissioner Gordon"
+com3.save
+
+bane = Role.new
+bane ["movie_id"] = last ["id"]
+bane ["actor_id"] = tom_hardy ["id"]
+bane ["character_name"] = "Bane"
+bane.save
+
+jb = Role.new
+jb ["movie_id"] = last ["id"]
+jb ["actor_id"] = joseph_gordon_levitt ["id"]
+jb ["character_name"] = "John Blake"
+jb.save
+
+sk = Role.new
+sk ["movie_id"] = last ["id"]
+sk ["actor_id"] = anne_hathaway ["id"]
+sk ["character_name"] = "Selina Kyle"
+sk.save
+
 
 # Prints a header for the movies output
 puts "Movies"
