@@ -32,6 +32,7 @@
 # - Insert the "Batman" sample data using ruby code. Do not use hard-coded ids.
 #   Delete any existing data beforehand so that each run of this script does not
 #   create duplicate data. (5 points)
+#done
 
 
 # - Query the data and loop through the results to display output similar to the
@@ -265,8 +266,19 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output.
-# TODO!
-
+movies = Movie.all
+for film in movies
+    # ...code to display a salesperson's name
+    # read the relevant columns from the salesperson row
+   flick = film["title"]
+    year = film["year_released"]
+    rate = film["rated"]
+    stu = film["studio_id"] 
+    warner = Studio.find_by({"id" => stu})
+  
+    # display a string with the relevant columns
+    puts "#{flick} #{year} #{rate} #{warner["name"]}"
+  end
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"
